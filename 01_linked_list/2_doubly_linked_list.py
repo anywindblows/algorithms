@@ -49,22 +49,6 @@ class LinkedList:
 
         return element
 
-    def insert_before(self, index: int, value: Any) -> Node:
-        """Get element by index and inset value before."""
-        element = self.Node(value=value)
-        if index == 0:
-            get_element = self.get(index=index)
-            self.__head = element
-            get_element.prev_value = element
-            element.next_value = get_element
-            return element
-
-        get_element = self.get(index=index-1)
-        element.next_value = get_element.next_value
-        get_element.next_value = element
-        element.prev_value = get_element
-        return element
-
     def __reversed__(self) -> 'LinkedList':
         """Reverse list."""
         prev = None
@@ -115,7 +99,6 @@ def main() -> None:
         linked_list.append(element)
 
     linked_list.insert_after(index=0, value='insert_after')
-    linked_list.insert_before(index=0, value='insert_before')
 
     print(linked_list)
     print(len(linked_list))

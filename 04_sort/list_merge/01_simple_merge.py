@@ -1,4 +1,4 @@
-def merge_list(array_one: list, array_two: list) -> list:
+def simple_merge(array_one: list, array_two: list) -> list:
     merged_list = list()
     i, j = 0, 0
     while i < len(array_one) and j < len(array_two):
@@ -14,19 +14,10 @@ def merge_list(array_one: list, array_two: list) -> list:
     return merged_list
 
 
-def merge_sort(array: list) -> list:
-    if len(array) < 2:
-        return array
-    mid = len(array) // 2
-
-    left = merge_sort(array[:mid])
-    right = merge_sort(array[mid:])
-    return merge_list(left, right)
-
-
 def main() -> None:
-    unsorted_array = [0, 17, 3, 1, 22, 7, 9, 4, 5, 8, 11]
-    print(merge_sort(unsorted_array))
+    list_one = [1, 3, 8, 9, 11]
+    list_two = [2, 4, 8, 12, 15]
+    print(simple_merge(list_one, list_two))
 
 
 if __name__ == '__main__':

@@ -22,7 +22,7 @@ class Deque:
         else:
             raise OverflowError
 
-    def pop_back(self) -> None:
+    def pop_back(self) -> Any:
         """Remove item from end of deque."""
         if self.is_empty():
             raise IndexError
@@ -41,7 +41,7 @@ class Deque:
         else:
             raise OverflowError
 
-    def pop_front(self) -> None:
+    def pop_front(self) -> Any:
         """Remove item from head of deque."""
         if self.is_empty():
             raise IndexError
